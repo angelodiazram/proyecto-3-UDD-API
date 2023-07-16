@@ -1,0 +1,88 @@
+* {
+    border: 0;
+    margin: 0;
+    font-family: 'VT323', monospace;
+}
+
+#mainContainer {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #FDC111;
+}
+
+#mainContainer #dashboard {
+    width: 15%;
+    height: 100vh;
+    background-color: #2E4591;
+    box-shadow: 2px 0px 5px black;
+}
+
+#mainContainer #pokedex {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainContainer #pokedex #boxMain {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background-color: #DC0A2D;
+    border-radius: 20px;
+    
+}
+
+#mainContainer #pokedex #boxMain #borderScreen {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background-color: #AEB0B4;
+    border-radius: 8px;
+    border-bottom-left-radius: 40px;
+    border: 3px solid black;
+    left: 20px;
+    top: 80px;
+}
+#mainContainer #pokedex #boxMain #borderScreen #screen{
+    position: absolute;
+    width: 300px;
+    height: 230px;
+    background-color: antiquewhite;
+    border-radius: 8px;
+    border: 3px solid black;
+    left: 20px;
+    top: 20px;
+}
+
+#mainContainer #pokedex #boxMainGraph {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background-color: #DC0A2D;
+    border-radius: 20px;
+}
+
+#boxMainGraph #borderScreenGraph {
+    position: absolute;
+    width: 350px;
+    height: 430px;
+    background-color: #AEB0B4;
+    border-radius: 8px;
+    border: 3px solid black;
+    left: 20px;
+    top: 80px;
+}
+
+#boxMainGraph #borderScreenGraph #screenGraph {
+    position: absolute;
+    width: 310px;
+    height: 388px;
+    background-color: antiquewhite;
+    border-radius: 8px;
+    border: 3px solid black;
+    left: 18px;
+    top: 18px;
+}
