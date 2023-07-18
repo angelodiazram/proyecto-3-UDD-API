@@ -50,7 +50,7 @@
     position: absolute;
     width: 300px;
     height: 230px;
-    background-color: antiquewhite;
+    background-color: #fff;
     border-radius: 8px;
     border: 3px solid black;
     left: 20px;
@@ -80,7 +80,7 @@
     position: absolute;
     width: 310px;
     height: 388px;
-    background-color: antiquewhite;
+    background-color: #fff;
     border-radius: 8px;
     border: 3px solid black;
     left: 18px;
