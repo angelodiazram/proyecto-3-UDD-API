@@ -7,17 +7,60 @@
 #mainContainer {
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #FDC111;
 }
 
 #mainContainer #dashboard {
-    width: 15%;
+    width: 20%;
     height: 100vh;
     background-color: #2E4591;
     box-shadow: 2px 0px 5px black;
+    padding: 15px;
 }
 
+#mainContainer #dashboard h2 {
+    color: #fff;
+    font-size: 33px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 3px black;
+    letter-spacing: 2px;
+}
+
+#mainContainer #dashboard #pokeForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#mainContainer #dashboard #pokeForm #inputPoke {
+    width: 100%;
+    height: 20px;
+    font-size: 20px;
+    padding: 5px;
+    color: black;
+    border-radius: 5px;
+}
+
+#mainContainer #dashboard #pokeForm #btnPoke {
+    width: fit-content;
+    height: fit-content;
+    background-color: #FDC111;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    align-self: center;
+}
+
+#mainContainer #dashboard #pokeForm #btnPoke:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 3px black;
+}
+
+#mainContainer #dashboard #pokeForm #btnPoke:active {
+    background-color: #DC0A2D;
+    color: #fff;
+}
 #mainContainer #pokedex {
     width: 100%;
     display: flex;
@@ -48,6 +91,11 @@
 }
 #mainContainer #pokedex #boxMain #borderScreen #screen{
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 300px;
     height: 230px;
     background-color: #fff;
@@ -55,6 +103,14 @@
     border: 3px solid black;
     left: 20px;
     top: 20px;
+}
+
+#mainContainer #pokedex #boxMain #borderScreen #screen #pokeName {
+    font-size: 35px;
+}
+
+#mainContainer #pokedex #boxMain #borderScreen #screen #pokeImg{
+    width: 190px;
 }
 
 #mainContainer #pokedex #boxMainGraph {
@@ -78,8 +134,8 @@
 
 #boxMainGraph #borderScreenGraph #screenGraph {
     position: absolute;
-    width: 310px;
-    height: 388px;
+    max-width: 310px;
+    min-height: 380px;
     background-color: #fff;
     border-radius: 8px;
     border: 3px solid black;
