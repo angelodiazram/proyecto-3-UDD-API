@@ -13,36 +13,43 @@
     <title>Dashboard - Proyecto 3 UDD</title>
 </head>
 <body>
+    
     <main id="mainContainer">
-        
         <section id="dashboard">
             <h2>Busca tu Pokémon</h2>
-            <form id="pokeForm">
+            <!-- <form id="pokeForm">
                 <input id="inputPoke" type="text" name="pokemon" placeholder="Ingresa el nombre">
                 <button id="btnPoke" type="submit">Encuentralo !!</button>
-            </form>
+            </form> -->
+            <div id="pokeCards"></div>
         </section>
-
+        
         <section id="pokedex">
-            <div id="boxMain">
-                <div id="borderScreen">
-                    <div id="screen">
-                        
+            <header id="header">
+                <h1>Pokedex</h1>
+                <p>
+                    Este pokedex te permitirá buscar un pokémon en el dashboard lateral
+                    presionando su nombre para ver sus "stats" junto con su imagen.
+                </p>
+            </header>
+            
+            <div id="boxPokedex">
+                <div id="boxMain">
+                    <div id="borderScreen">
+                        <div id="screen">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div id="boxMainGraph">
+                    <div id="borderScreenGraph">
+                        <canvas id="screenGraph"></canvas>
                     </div>
                 </div>
             </div>
-            <div id="boxMainGraph">
-                <div id="borderScreenGraph">
-                    <canvas id="screenGraph">
-                        
-                    </canvas>
-                </div>
-            </div>
         </section>
-        
-
-
     </main>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="src/app.js"></script>
 </body>

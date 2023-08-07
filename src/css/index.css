@@ -13,7 +13,7 @@
 
 #mainContainer #dashboard {
     width: 20%;
-    height: 100vh;
+    height: fit-content;
     background-color: #2E4591;
     box-shadow: 2px 0px 5px black;
     padding: 15px;
@@ -61,12 +61,65 @@
     background-color: #DC0A2D;
     color: #fff;
 }
-#mainContainer #pokedex {
+
+#dashboard #pokeCards {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 5px;
+
+}
+
+#dashboard #pokeCards .pokemon {
+    background-color: #FDC111;
+    margin-bottom: 10px;
+    width: 40%;
+    text-align: center;
+    height: 30px;
+    border-radius: 5px;
+    transition: 100ms all;
+}
+
+#dashboard #pokeCards .pokemon:hover{
+    cursor: pointer;
+    box-shadow: 2px 3px 3px black;
+}
+
+#dashboard #pokeCards .pokemon:active{
+    color: #fff;
+    background-color: #DC0A2D;
+}
+
+#mainContainer #pokedex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+}
+
+#mainContainer #pokedex #header {
+    width: 100%;
+    margin: 30px 0px;
+    text-align: center;
+}
+
+#mainContainer #pokedex #header h1 {
+    color: #fff;
+    text-shadow: 3px 3px 4px #000;
+    font-size: 100px;
+}
+
+#mainContainer #pokedex #header p {
+    color: #fff;
+    text-shadow: 3px 3px 1px #000;
+    font-size: 40px;    
+}
+
+#mainContainer #pokedex #boxPokedex {
+    display: flex;
+    flex-direction: row;
 }
 
 #mainContainer #pokedex #boxMain {
