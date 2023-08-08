@@ -1,12 +1,12 @@
 // VARIABLES GLOBALES:
 
-const inputPoke = document.querySelector('#inputPoke');
-const btn = document.querySelector('#btnPoke');
-const screen = document.querySelector('#screen');
-const ctx = document.getElementById('screenGraph');
-const pokeCardsContainer = document.querySelector('#pokeCards');
+const screen = document.querySelector('#screen'); //contenedor del la imagen y nombre del pokemon
+const ctx = document.getElementById('screenGraph'); // canvas donde se renderiza el grafico
+const pokeCardsContainer = document.querySelector('#pokeCards'); // contenedor del div para nombres de pokemones en el dashboard
 
-let queryPokemon = '';
+let instanciaChart; // !instancia para el grafico. MUY IMPORTANTE
+
+let queryPokemon = ''; // varibale vacia que recibira el nombre del pokemon para la petición fetch
 
 // función asincrona que realiza la petición a la API
 const peticionApi = async(pokemon) => {
@@ -36,41 +36,46 @@ const peticionApi = async(pokemon) => {
 
 // Creación de grafico tipo radar
 const graphPoke = (pokemon) => {
-    new Chart(ctx,{
-    type: 'radar',
-        data: {
-            labels: [
-                `Hp`,
-                'Ataque',
-                'Defensa,',
-                'Ataque especial',
-                'Defensa Especial',
-                'Velocidad'
+    const labels = [
+        `Hp`,
+        'Ataque',
+        'Defensa,',
+        'Ataque especial',
+        'Defensa Especial',
+        'Velocidad'
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: pokemon.name,
+            data: pokemon.stats.map((element) => element.base_stat),
+            backgroundColor: [
+                'rgb(255, 0, 0)',
+                'rgb(15, 0, 255)',
+                'rgb(128, 128, 128)',
+                'rgb(130, 255, 13)',
+                'rgb(3, 5, 2)',
+                'rgb(255, 205, 86)'
             ],
-            datasets: [{
-                label: pokemon.name,
-                data: pokemon.stats.map((element) => element.base_stat),
-                backgroundColor: [
-                    'rgb(255, 0, 0)',
-                    'rgb(15, 0, 255)',
-                    'rgb(128, 128, 128)',
-                    'rgb(130, 255, 13)',
-                    'rgb(3, 5, 2)',
-                    'rgb(255, 205, 86)'
-                ],
-                hoverOffset: 4
-            }]
-        }
-    });
+            hoverOffset: 4
+        }]
+    };
+
+    /*
+    Esta condición evalua si es que exite la instacia o no para actualizar el grafico
+    */
+    if (instanciaChart) {
+        instanciaChart.data = data;
+        instanciaChart.update(); // metodo de chartJS para actualizar la información
+    } else {
+        instanciaChart = new Chart(ctx, {
+            type: 'radar',
+            data: data
+        });
+    }
+
 };
-
-// btn.addEventListener('click', async(e) => {
-    
-//     e.preventDefault()
-    
-//     peticionApi()
-
-// })
 
 // función asincrona para hacer la petición a la API
 const getPokeList = async () => {

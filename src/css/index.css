@@ -27,40 +27,7 @@
     letter-spacing: 2px;
 }
 
-#mainContainer #dashboard #pokeForm {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
-#mainContainer #dashboard #pokeForm #inputPoke {
-    width: 100%;
-    height: 20px;
-    font-size: 20px;
-    padding: 5px;
-    color: black;
-    border-radius: 5px;
-}
-
-#mainContainer #dashboard #pokeForm #btnPoke {
-    width: fit-content;
-    height: fit-content;
-    background-color: #FDC111;
-    font-size: 20px;
-    padding: 5px;
-    border-radius: 5px;
-    align-self: center;
-}
-
-#mainContainer #dashboard #pokeForm #btnPoke:hover {
-    cursor: pointer;
-    box-shadow: 2px 2px 3px black;
-}
-
-#mainContainer #dashboard #pokeForm #btnPoke:active {
-    background-color: #DC0A2D;
-    color: #fff;
-}
 
 #dashboard #pokeCards {
     width: 100%;
